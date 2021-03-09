@@ -4,18 +4,61 @@ header{
 body{
   background-color: #d15a28;
 }
+.topbar{
+  text-align: center;
+  vertical-align: top;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 3%;
+}
 .title{
+  display: inline-block;
+  overflow: auto;
+  width: 50%;
   text-align: left;
   font-family: 'Asap';
   font-weight: bold;
   font-size: 30px;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 3%;
   color: white;
-  height: 100px;
+}
+.nav{
+  overflow: auto;
+  display: inline-block;
+  width:50%;
+  float: right;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li{
+  float: right;
+  font-family: 'Asap';
+  font-weight: bold;
+  font-size: 25px;
+}
+li:last-child {
+  border-right: none;
+}
 
-  background-color: #d15a28;
+li a {
+  color: white;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+a:link{
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 30px;
 }
 .draw {
   padding:30px;
