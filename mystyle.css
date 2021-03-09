@@ -12,10 +12,7 @@ body{
   padding-left: 3%;
   padding-right: 3%;
   padding-top: 3%;
-  color: white;
-  height: 100px;
-
-  background-color: #d15a28;
+  font-color: white;
 }
 .draw {
   padding:30px;
