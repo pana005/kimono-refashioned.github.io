@@ -1,0 +1,42 @@
+header{
+  margin: 0px;
+}
+body{
+  background-color: #d15a28;
+}
+.title{
+  text-align: left;
+  font-family: 'Asap';
+  font-weight: bold;
+  font-size: 30px;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 3%;
+  color: white;
+  height: 100px;
+
+  background-color: #d15a28;
+}
+.draw {
+  padding:30px;
+}
+.box{
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background: white;
+  outline: 2px solid black;
+}
+
+.motif{
+  display: flex;
+  justify-content: center;
+}
+.item {
+  width: 100px;
+  height: 100px;
+  margin: 8px;
+  background-color: white;
+  outline: black solid 1px;
+
+}
