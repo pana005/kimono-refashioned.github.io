@@ -3,7 +3,9 @@
 <head>
  <meta charset="UTF-8">
  <link href="mystyle.css" rel="stylesheet">
- <title>Aileen Pan</title>
+ <script src="jquery-3.2.1.min.js"></script>
+ <script src="index.js"></script>
+ <title>Refashioning: Kimono Refashioned</title>
 </head>
 
 <body>
@@ -12,8 +14,6 @@
  <div class="title">Kimono Refashioned <br> Pattern Generator</div>
 <div class="nav">
  <ul class="links">
-   <li><a href="contact.html">Contact</a></li>
-   <li><a href="contact.html">Explore</a></li>
    <li><a href="https://infocus.asianart.org/kimonorefashioned/">About</a></li>
  </ul>
 </div>
@@ -21,35 +21,35 @@
 <! –– drawboard ––>
 <center>
  <section class="draw">
-   <div class="box"> </div>
+   <div id="box"> <img id=first-image src="image1.png"></div>
  </section>
 <! –– toolbar ––>
 
 <! –– motif bar ––>
  <section class="motif">
-    <div class="item" >
-      <img src="assets/img/Flower@2x.png" alt="flower" width="100px" height="100px">
+   <div class="item" onclick="document.getElementById('first-image').src='1-1.png'">
+      <img src="assets/img/Flower@2x.png" alt="flower" >
     </div>
-    <div class="item" >
-      <img src="assets/img/Lion@2x.png" alt="lion" width="100px" height="100px">
+    <div class="item" onclick="document.getElementById('first-image').src='lion.png'">
+      <img src="assets/img/Lion@2x.png" alt="lion" >
     </div>
-    <div class="item" >
-      <img src="assets/img/Boot Branch@2x.png" alt="branch" width="100px" height="100px">
+    <div class="item" onclick="document.getElementById('first-image').src='3-2.png'">
+      <img src="assets/img/Boot Branch@2x.png" alt="branch" >
     </div>
-    <div class="item" >
-      <img src="assets/img/Wave@2x.png" alt="red wave" width="100px" height="100px">
+    <div class="item" onclick="document.getElementById('first-image').src='noodles.png'">
+      <img src="assets/img/Wave@2x.png" alt="red wave" >
     </div>
-    <div class="item" >
-      <img src="assets/img/菊花@2x.png" alt="red wave" width="100px" height="100px">
+    <div class="item" onclick="document.getElementById('first-image').src='black.png'">
+      <img src="assets/img/菊花@2x.png" alt="red wave" >
     </div>
-    <div class="item" >
-      <img src="assets/img/Bird@2x.png" alt="red wave" width="100px" height="100px">
+    <div class="item" onclick="document.getElementById('first-image').src='2-3.png'">
+      <img src="assets/img/Bird@2x.png" alt="red wave" >
     </div>
-    <div class="item" >
-      <img src="assets/img/Floral@2x.png" alt="red wave" width="100px" height="100px">
+    <div class="item" onclick="document.getElementById('first-image').src='blossom.png'">
+      <img src="assets/img/Floral@2x.png" alt="red wave" >
     </div>
-    <div class="item" >
-      <img src="assets/img/Artboard 8@2x.png" alt="red wave" width="100px" height="100px">
+    <div class="item" onclick="document.getElementById('first-image').src='bamboo.png'">
+      <img src="assets/img/Artboard 8@2x.png" alt="red wave" >
     </div>
   </section>
 </center>
