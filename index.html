@@ -5,6 +5,7 @@
  <link href="mystyle.css" rel="stylesheet">
  <script src="jquery-3.2.1.min.js"></script>
  <script src="index.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
  <title>Refashioning: Kimono Refashioned</title>
 </head>
 
@@ -15,45 +16,103 @@
 <div class="nav">
  <ul class="links">
    <li><a href="https://infocus.asianart.org/kimonorefashioned/">About</a></li>
+   <li><div class="export" onclick="export_image()">Export</div></li>
+   <li><div class="undo" onclick="undo_image()">Undo</div></li>
+   <li><div class="reset" onclick="reset()">Reset</div></li>
  </ul>
 </div>
 </div>
+
 <! –– drawboard ––>
 <center>
- <section class="draw">
+ <section class="draw" crossorigin="anonymous">
    <div id="box"> <img id=first-image src="image1.png"></div>
  </section>
-<! –– toolbar ––>
 
 <! –– motif bar ––>
  <section class="motif">
-   <div class="item" onclick="document.getElementById('first-image').src='1-1.png'">
+   <div class="item" onclick="call_img('flower', 3)">
       <img src="assets/img/Flower@2x.png" alt="flower" >
     </div>
-    <div class="item" onclick="document.getElementById('first-image').src='lion.png'">
+    <div class="item" onclick="call_img('lion', 3)">
       <img src="assets/img/Lion@2x.png" alt="lion" >
     </div>
-    <div class="item" onclick="document.getElementById('first-image').src='3-2.png'">
+    <div class="item" onclick="call_img('orange', 3)">
       <img src="assets/img/Boot Branch@2x.png" alt="branch" >
     </div>
-    <div class="item" onclick="document.getElementById('first-image').src='noodles.png'">
+    <div class="item" onclick="call_img('wave', 3)">
       <img src="assets/img/Wave@2x.png" alt="red wave" >
     </div>
-    <div class="item" onclick="document.getElementById('first-image').src='black.png'">
-      <img src="assets/img/菊花@2x.png" alt="red wave" >
+    <div class="item" onclick="call_img('red', 3)">
+      <img src="assets/img/菊花@2x.png" alt="red flower" >
     </div>
-    <div class="item" onclick="document.getElementById('first-image').src='2-3.png'">
+    <div class="item" onclick="call_img('bird', 3)">
       <img src="assets/img/Bird@2x.png" alt="red wave" >
     </div>
     <div class="item" onclick="document.getElementById('first-image').src='blossom.png'">
       <img src="assets/img/Floral@2x.png" alt="red wave" >
     </div>
     <div class="item" onclick="document.getElementById('first-image').src='bamboo.png'">
-      <img src="assets/img/Artboard 8@2x.png" alt="red wave" >
+      <img src="assets/img/bamboo.png" alt="red wave" >
     </div>
+
   </section>
 </center>
 
+<script type="text/javascript">
+  var cnt = 0;
+
+  function reset() {
+    window.open("http://aileenpan.github.io/index.html", '_blank');
+  }
+
+  function undo_image() {
+    document.getElementById("canvas").remove();
+    window.cnt = window.cnt - 1;
+  }
+
+  function export_image() {
+    let div = document.getElementById('box');
+    html2canvas(div).then(
+        function (canvas) {
+            saveAs(canvas.toDataURL(), 'export.png');
+        })
+  }
+
+  function saveAs(uri, filename) {
+    var link = document.createElement('a');
+    if (typeof link.download === 'string') {
+        link.href = uri;
+        link.download = filename;
+        //Firefox requires the link to be in the body
+        document.body.appendChild(link);
+        //simulate click
+        link.click();
+        //remove the link when done
+        document.body.removeChild(link);
+    } else {
+        window.open(uri);
+    }
+  }
+
+  function call_img(prefix, max_suffix) {
+    if (window.cnt == 0) {
+      document.getElementById("first-image").remove();
+    }
+    if (window.cnt >= 3) {
+      alert("too much pattern on your canvas!");
+    } else {
+      var suffix = Math.floor( Math.random() * (max_suffix - 1) + 1 );
+      var img = document.createElement("img");
+      img.id = "canvas";
+      img.src = "assets/img/" + prefix + "-" + suffix + ".png";
+      img.style = "z-index: " + window.cnt + "; position: absolute; top: 0; left: 0;"
+      var img_div_position = document.getElementById("box");
+      img_div_position.appendChild(img);
+      window.cnt = window.cnt + 1;
+    }
+  }
+</script>
 
 </body>
 </html>
