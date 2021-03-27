@@ -4,6 +4,7 @@
  <meta charset="UTF-8">
  <link href="mystyle.css" rel="stylesheet">
  <script src="jquery-3.2.1.min.js"></script>
+<script src="html2canvas.min.js"></script>
  <script src="index.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
  <title>Refashioning: Kimono Refashioned</title>
@@ -31,7 +32,7 @@
 
 <! –– motif bar ––>
  <section class="motif">
-   <div class="item" onclick="call_img('flower', 3)">
+   <div crossorigin="anonymous" class="item" onclick="call_img('flower', 3)">
       <img src="assets/img/Flower@2x.png" alt="flower" >
     </div>
     <div class="item" onclick="call_img('lion', 3)">
@@ -63,7 +64,7 @@
   var cnt = 0;
 
   function reset() {
-    window.open("http://aileenpan.github.io/index.html", '_blank');
+    window.location.replace("https://pana005.github.io/kimono-refashioned.github.io/", '_blank');
   }
 
   function undo_image() {
@@ -72,11 +73,17 @@
   }
 
   function export_image() {
-    let div = document.getElementById('box');
-    html2canvas(div).then(
-        function (canvas) {
-            saveAs(canvas.toDataURL(), 'export.png');
-        })
+
+    html2canvas(document.querySelector("#box")).then(canvas => {
+        document.body.appendChild(canvas)
+
+        this.href = document.getElementById("box").toDataURL();
+        this.download = "export.png";
+    });
+
+
+
+
   }
 
   function saveAs(uri, filename) {
@@ -100,7 +107,7 @@
       document.getElementById("first-image").remove();
     }
     if (window.cnt >= 3) {
-      alert("too much pattern on your canvas!");
+      alert("too much pattern on your canvas! Try Undo one motif.");
     } else {
       var suffix = Math.floor( Math.random() * (max_suffix - 1) + 1 );
       var img = document.createElement("img");
