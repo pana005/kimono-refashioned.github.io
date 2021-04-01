@@ -4,7 +4,7 @@
  <meta charset="UTF-8">
  <link href="mystyle.css" rel="stylesheet">
  <script src="jquery-3.2.1.min.js"></script>
-<script src="html2canvas.min.js"></script>
+ <script src="html2canvas.min.js"></script>
  <script src="index.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
  <title>Refashioning: Kimono Refashioned</title>
@@ -16,19 +16,26 @@
  <div class="title">Kimono Refashioned <br> Pattern Generator</div>
 <div class="nav">
  <ul class="links">
-   <li><a href="https://infocus.asianart.org/kimonorefashioned/">About</a></li>
-   <li><div class="export" onclick="export_image()">Export</div></li>
-   <li><div class="undo" onclick="undo_image()">Undo</div></li>
-   <li><div class="reset" onclick="reset()">Reset</div></li>
+   <li class="option"><a href="https://infocus.asianart.org/kimonorefashioned/">About</a></li>
+   <li class="option"><a href="contact.html">Contact</a></li>
  </ul>
 </div>
 </div>
+
+
+<section class="tool">
+ <li class= "tool1"><div class="undo" onclick="undo_image()">Undo</div></li>
+ <li class= "tool1"><div class="export" onclick="export_image()">Export</div></li>
+ <li class= "tool1"><div class="reset" onclick="reset()">Reset</div></li>
+</section>
 
 <! –– drawboard ––>
 <center>
  <section class="draw" crossorigin="anonymous">
    <div id="box"> <img id=first-image src="image1.png"></div>
  </section>
+
+
 
 <! –– motif bar ––>
  <section class="motif">
@@ -56,7 +63,6 @@
     <div class="item" onclick="document.getElementById('first-image').src='bamboo.png'">
       <img src="assets/img/bamboo.png" alt="red wave" >
     </div>
-
   </section>
 </center>
 
@@ -107,7 +113,7 @@
       document.getElementById("first-image").remove();
     }
     if (window.cnt >= 3) {
-      alert("Ｔoo much pattern on your canvas! Try Undo one motif.");
+      alert("Too much pattern on your canvas! Try Undo one motif.");
     } else {
       var suffix = Math.floor( Math.random() * (max_suffix - 1) + 1 );
       var img = document.createElement("img");
