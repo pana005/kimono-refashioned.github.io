@@ -77,7 +77,6 @@ a:hover {
 }
 .tool1{
   font-size: 25px;
-
   text-decoration: none;
   display: inline-block;
 }
@@ -91,7 +90,8 @@ a:hover {
   border-radius: 50% 20% / 10% 40%;
 }
 .tool1:hover{
-  cursor: pointer;
+  cursor:pointer;
+  animation: flash linear 2s infinite;
 }
 .draw {
   padding:30px;
@@ -121,7 +121,7 @@ a:hover {
 
 @keyframes flash {
 	0% { opacity: 1; }
-	50% { opacity: .1; }
+	50% { opacity: 0; }
 	100% { opacity: 1; }
 }
 
