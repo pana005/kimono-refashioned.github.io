@@ -1,31 +1,41 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="mystyle.css" rel="stylesheet">
     <title></title>
   </head>
   <body>
-
+    <center>
+    <a class="backward" href src=" https://pana005.github.io/kimono-refashioned.github.io/"> Back to generator </a>
     <h3>Contact Form</h3>
 
     <div class="container">
       <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <div class="options">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <div class="options">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
 
-        <label for="country">Email</label>
-        <input type="text" id="email" name="email" placeholder="Email..">
+        <div class="options">
+          <label for="country">Email</label>
+          <input type="text" id="email" name="email" placeholder="Email..">
+        </div>
 
+        <div class="options">
+          <label for="subject">Comments</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
 
-        <label for="subject">Comments</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-        <input type="submit" value="Submit">
+        <div class="options"><input type="submit" value="Submit"></div>
       </form>
     </div>
+  </center>
 </body>
 </html>
