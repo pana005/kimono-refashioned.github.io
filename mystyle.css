@@ -90,6 +90,9 @@ a:hover {
   border: white solid 2px;
   border-radius: 50% 20% / 10% 40%;
 }
+.tool1:hover{
+  cursor: pointer;
+}
 .draw {
   padding:30px;
 }
